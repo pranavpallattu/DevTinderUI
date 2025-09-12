@@ -9,6 +9,7 @@ const Login = () => {
 
   const[emailId,setEmailId]=useState("pranav@gmail.com")
   const[password,setPassword]=useState("Pranav@123")
+  const[error,setError]=useState("")
 
   const dispatch=useDispatch()
     const navigate=useNavigate()
@@ -20,13 +21,14 @@ const Login = () => {
           password
         },{withCredentials:true})
         console.log(res);
-        dispatch(addUser(res.data))
+        if(res?.status===200){
+         dispatch(addUser(res.data))
         navigate("/")
-        
+        }
+     
     }
     catch(error){
-      console.log(error);
-      
+      setError(error?.response?.data || "something went wrong")      
     }
   }
 
@@ -47,6 +49,7 @@ const Login = () => {
   {password}
 </fieldset>
     </div>
+    <p className='text-red-300' >{error}</p>
     <div className="card-actions justify-end">
       <button onClick={handleLogin} className="btn btn-primary">Login</button>
     </div>
