@@ -24,7 +24,7 @@ const Body = () => {
       dispatch(addUser(res.data));
       console.log("profile/view from body run");
     } catch (err) {
-      if (err.response.status == 401) {
+      if (err?.response?.status == 401) {
         navigate("/login");
       }
       console.error(err);

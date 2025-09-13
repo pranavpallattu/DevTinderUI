@@ -24,7 +24,16 @@
 - You should not be able to acces other routes without login
 - if token is not present redirect to login page
 - Logout feature
-- 
+- Get the feed and add the feed to the store
+- build the user card on feed
+- Edit profile feature
+- Show toast message on save of profile
+- make gender dropdown
+- make about textarea
+- Instaead of checking skill array.length we are checking the length of the string
+- New page - see all my connection
+- New page - see all my pending connection requests
+
 
 
 

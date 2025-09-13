@@ -42,11 +42,9 @@ const Login = () => {
     <div className='w-full py-3'>
       <fieldset className="fieldset py-4">
   <input type="text" className="input py-3" placeholder="Email Id" value={emailId} onChange={(e)=>setEmailId(e.target.value)} />
-  {emailId}
 </fieldset>
    <fieldset className="fieldset py-4">
   <input type="text" className="input py-3" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
-  {password}
 </fieldset>
     </div>
     <p className='text-red-300' >{error}</p>
