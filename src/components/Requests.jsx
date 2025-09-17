@@ -6,7 +6,6 @@ import { addRequests } from "../utils/requestSlice";
 
 const Requests = () => {
   const connectionRequests = useSelector((store) => store.requests);
-  console.log("store  " + connectionRequests);
 
   const dispatch = useDispatch();
   const fetchRequests = async () => {
@@ -21,6 +20,17 @@ const Requests = () => {
       console.error(error);
     }
   };
+
+  const reviewRequest=async(status,requestid)=>{
+   try{
+     const res=await axios.post(BASE_URL+ "/request"+ "/review/" + status + "/" + requestid,{},{withCredentials:true})
+    console.log(res);
+   }
+   catch(error){
+    console.error(error);
+   }
+    
+  }
 
   useEffect(() => {
     fetchRequests();
@@ -46,8 +56,8 @@ const Requests = () => {
                 {age && gender && age + ", " + gender}
               </h2>
               <p className="py-2">{about}</p>
-              <button className="btn  bg-orange-600">Reject</button>
-              <button className="btn  bg-green-500 mx-4">Accept</button>
+              <button className="btn  bg-orange-600" onClick={()=>reviewRequest("rejected",request._id)}>Reject</button>
+              <button className="btn  bg-green-500 mx-4" onClick={()=>reviewRequest("accepted",request._id)}>Accept</button>
             </div>
           </div>
         </div>

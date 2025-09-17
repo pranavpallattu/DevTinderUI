@@ -33,6 +33,24 @@
 - Instaead of checking skill array.length we are checking the length of the string
 - New page - see all my connection
 - New page - see all my pending connection requests
+- Part 4 - last part - removing req from pending request page
+- Feature - accept reject connection req 
+- error - feed doesnt shows new user without refresing even after sending ignored or interested
+
+- send or ignore the user from the feed
+- Signup new User
+
+
+
+deployment - AWS
+----------------
+
+- signup on AWS
+- Launch Instance
+- chmod 400 <secret>.pem
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-13-126-248-210.ap-south-1.compute.amazonaws.com
+- install node version
+- 
 
 
 
