@@ -50,7 +50,37 @@ deployment - AWS
 - chmod 400 <secret>.pem
 - ssh -i "devTinder-secret.pem" ubuntu@ec2-13-126-248-210.ap-south-1.compute.amazonaws.com
 - install node version
+- git clone
+
+Frontend
 - 
+- npm install - dependencies install
+- npm run build - dist folder
+- sudo apt update
+- sudo apt update nginx
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+- copy code from build files(dist) to /var/www/html
+- sudo scp -r dist/* /var/www/html/
+- Enable port 80 of your instance
+
+Backend
+
+
+- cd DevTinder/
+- npm install
+- updated DB password
+- allowed ec2 instance public ip on mongodb server
+- npm install pm2 -g
+- pm2 start npm --start
+(pm2 logs)
+(pm2 flush npm) npm - name of the application
+pm2 list - list of process
+pm2 stop npm - stop the process
+pm2 delete npm - delete the process
+- 
+modify base url of frontend to /api
+
 
 
 
