@@ -34,14 +34,16 @@ const NavBar = () => {
   </div>
   <div className="flex gap-2">
     {user && <div className="dropdown dropdown-end mx-5">
-      <p>Welcome {user.firstName}</p>
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+    <div className='flex items-center'>
+        <p>Welcome {user.firstName}</p>
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ms-2">
         <div className="w-10 rounded-full">
           <img
             alt="User Photo"
             src={user.photoUrl} />
         </div>
       </div>
+    </div>
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
@@ -58,6 +60,11 @@ const NavBar = () => {
          <li>
           <Link to="/requests" className="justify-between">
             Connection Requests
+          </Link>
+        </li>
+          <li>
+          <Link to="/premium" className="justify-between">
+            Premium
           </Link>
         </li>
         <li><a>Settings</a></li>

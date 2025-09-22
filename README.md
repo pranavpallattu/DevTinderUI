@@ -139,6 +139,66 @@ nginx config
 
 
 
+# Adding a custom Domain name
+
+- purchased domain name from godaddy
+- signup on cloudflare and add a new domain name
+- change the nameservers on godaddy and point it to cloudflare
+- wait for some time till your name is updated
+- DNS record - A should point to our ec2 ip address
+- Enable SSL for Website
+- 
+
+
+_domainconnect CNAME
+
+✅ Allows GoDaddy (or other services) to automatically configure DNS if needed.
+
+Harmless — Cloudflare works fine with it.
+
+www CNAME
+
+✅ Points www.devsmash.xyz to the root domain.
+
+Proxied → traffic is routed through Cloudflare (SSL, caching, DDoS protection).
+
+Root A record
+
+✅ Points devsmash.xyz to your hosting IP 13.126.248.210.
+
+Proxied → benefits from Cloudflare’s security and performance features.
+
+In DNS (Domain Name System), records tell the internet where to find your website or services. The two most common types you see are A and CNAME.
+
+1️⃣ A Record (Address Record)
+
+What it does: Points a domain to a specific IP address (the “home” of your website/server).
+
+Example in your case:
+
+
+CNAME Record (Canonical Name Record)
+
+What it does: Points a domain to another domain name instead of an IP.
+
+
+Always have an A record for the root domain and CNAME for subdomains. Let Cloudflare proxy both for security, caching, and performance.
+
+
+
+# Razorpay Payment Integration
+
+- Signup on razorpay and complete kyc
+- Created a UI for premium page 
+- Creating an api for create order in backend
+- added my key and secret in env file
+- Initialized razorpay in utils
+- creating order on razorpay
+- created payment schema and model
+- saved the order in payments collection
+- makes the order dynamic
+- setup Razorpay webhook on your live API
+- 
 
 
 
